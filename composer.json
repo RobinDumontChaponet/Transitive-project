@@ -1,0 +1,18 @@
+{
+	"name": "RobinDumontChaponet/Transedit",
+	"description": "Description is coming",
+	"type": "project",
+	"authors": [
+		{
+			"name": "Robin Dumont-Chaponet",
+			"email": "src@dumontchapo.net",
+			"homepage": "https://robin.dumontchapo.net",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": "^5.3.3 || ^7.0",
+		"RobinDumontChaponet/TransitiveCore":"dev-master",
+		"RobinDumontChaponet/TransitiveUtils":"dev-master"
+	}
+}
