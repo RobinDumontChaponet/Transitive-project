@@ -1,5 +1,5 @@
 {
-	"name": "RobinDumontChaponet/Transedit",
+	"name": "RobinDumontChaponet/TransitiveMVP",
 	"description": "Description is coming",
 	"type": "project",
 	"authors": [
@@ -8,6 +8,16 @@
 			"email": "src@dumontchapo.net",
 			"homepage": "https://robin.dumontchapo.net",
 			"role": "Developer"
+		}
+	],
+	"repositories": [
+		{
+			"type":"vcs",
+			"url":"/Users/r-dc/Sites/Transitive/Utils"
+		},
+		{
+			"type":"vcs",
+			"url":"/Users/r-dc/Sites/Transitive/Core"
 		}
 	],
 	"require": {
