@@ -10,18 +10,8 @@
 			"role": "Developer"
 		}
 	],
-	"repositories": [
-		{
-			"type":"vcs",
-			"url":"/Users/r-dc/Sites/Transitive/Utils"
-		},
-		{
-			"type":"vcs",
-			"url":"/Users/r-dc/Sites/Transitive/Core"
-		}
-	],
 	"require": {
-		"php": "^5.3.3 || ^7.0",
+		"php": "^7.0",
 		"RobinDumontChaponet/TransitiveCore":"dev-master",
 		"RobinDumontChaponet/TransitiveUtils":"dev-master"
 	}
