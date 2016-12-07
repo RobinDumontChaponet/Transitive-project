@@ -1,5 +1,5 @@
 {
-	"name": "RobinDumontChaponet/TransitiveMVP",
+	"name": "transitive/mvp",
 	"description": "Description is coming",
 	"type": "project",
 	"authors": [
@@ -10,9 +10,19 @@
 			"role": "Developer"
 		}
 	],
+	"repositories": [
+		{
+			"type":"vcs",
+			"url":"/Users/r-dc/Sites/openthenext/Utils"
+		},
+		{
+			"type":"vcs",
+			"url":"/Users/r-dc/Sites/openthenext/Core"
+		}
+	],
 	"require": {
 		"php": "^7.0",
-		"RobinDumontChaponet/TransitiveCore":"dev-master",
-		"RobinDumontChaponet/TransitiveUtils":"dev-master"
+		"transitive/core":"dev-master",
+		"transitive/utils":"dev-master"
 	}
 }
