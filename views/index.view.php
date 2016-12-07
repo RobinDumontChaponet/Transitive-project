@@ -19,7 +19,6 @@ $view->content = function ($data) { ?>
 	</ul>
 </article>
 <br />
-<p class="notice"><i>This view <strong>was <?= (!$data['isJSON']) ? 'not' : '' ?></strong> fetched using json.</p>
 
 <?php
 } ?>

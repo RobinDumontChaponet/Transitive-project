@@ -2,7 +2,7 @@
 
 $view->setTitle('test');
 $view->addMetaTag('author', 'r-dc');
-$view->importScript('url');
+// $view->importScript('url');
 //$view->addScript('alert("test")');
 $view->addStyle('body {background:lightgrey}');
 $view->linkStylesheet('style/animations.css');
