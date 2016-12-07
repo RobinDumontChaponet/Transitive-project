@@ -13,17 +13,21 @@ define('VIEWS_INC', ROOT_PATH.'/views/');
 define('DATA_PATH', ROOT_PATH.'/data/');
 define('WEB_DATA', SELF.'data/');
 
+/*
 if(class_exists('Transitive\Core\FrontController')) {
     Core\FrontController::$presenterIncludePath = ROOT_PATH.'/presenters/';
     Core\FrontController::$viewIncludePath = ROOT_PATH.'/views/';
 }
+*/
 
 /*
  * Database
  */
+/*
 if(class_exists('Transitive\Utils\Database')) {
     Utils\Database::addDatabase('data', new Utils\Database('dbName', 'dbUser', 'dbPassword')); // Add database configuration to pool. The connection is established only later when Database::getInstanceById is called.
 }
+*/
 
 /*
  * Locales
