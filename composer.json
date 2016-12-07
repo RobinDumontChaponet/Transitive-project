@@ -10,16 +10,6 @@
 			"role": "Developer"
 		}
 	],
-	"repositories": [
-		{
-			"type":"vcs",
-			"url":"/Users/r-dc/Sites/openthenext/Utils"
-		},
-		{
-			"type":"vcs",
-			"url":"/Users/r-dc/Sites/openthenext/Core"
-		}
-	],
 	"require": {
 		"php": "^7.0",
 		"transitive/core":"dev-master",
