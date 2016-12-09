@@ -9,7 +9,6 @@ use Transitive\Core\FrontController as FrontController;
 set_include_path(__DIR__.'/../includes');
 require 'conf.inc.php';
 
-
 $timed = Utils\Optimization::newTimer();
 
 $transit = new FrontController();
@@ -25,13 +24,13 @@ $transit->addRouter(new Core\Router(array(
 	'example2' => new Core\Route('example2', PRESENTERS.'example2', VIEWS.'example2'),
 	'nothing'  => new Core\Route('nothing',  PRESENTERS.'none',     VIEWS.'none'),
 	'empty1'   => new Core\Route('',         PRESENTERS.'none',     ''),
-	'empty2'   => new Core\Route('',         '',                    '')
+	'empty2'   => new Core\Route('',         '',                    ''),
 )));
 // TEMPORARY ROUTER. FOR TESTING PURPOSES !
 
 $transit->execute(@$_GET['requ']);
 
-$transit->layout = function($transit) {
+$transit->layout = function ($transit) {
 	global $timed;
 ?>
 
