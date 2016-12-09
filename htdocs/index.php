@@ -12,8 +12,22 @@ require 'conf.inc.php';
 
 $timed = Utils\Optimization::newTimer();
 
-$transit = new FrontController(@$_GET['requ']);
-$transit->execute();
+$transit = new FrontController();
+
+// TEMPORARY ROUTER. FOR TESTING PURPOSES !
+$transit->addRouter(new Core\Router(array(
+	'index'    => new Core\Route('index',    PRESENTERS.'index',    VIEWS.'index'),
+	'redirect' => new Core\Route('redirect', PRESENTERS.'index',    VIEWS.'index'),
+	'example0' => new Core\Route('example0', PRESENTERS.'example0', VIEWS.'example0'),
+	'example1' => new Core\Route('example1', PRESENTERS.'example1', VIEWS.'example1'),
+	'example2' => new Core\Route('example2', PRESENTERS.'example2', VIEWS.'example2'),
+	'nothing'  => new Core\Route('nothing',  PRESENTERS.'none',     VIEWS.'none'),
+	'empty1'   => new Core\Route('',         PRESENTERS.'none',     VIEWS.''),
+	'empty2'   => new Core\Route('',         PRESENTERS.'',         VIEWS.'')
+)));
+// TEMPORARY ROUTER. FOR TESTING PURPOSES !
+
+$transit->execute(@$_GET['requ']);
 
 $transit->layout = function($transit) {
 	global $timed;
