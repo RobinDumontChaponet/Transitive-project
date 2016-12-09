@@ -4,3 +4,5 @@
 // $presenter->setViewPath('aDifferentViewThanDefault');
 
 //$data['test'] = 'testData';
+
+var_dump('test');

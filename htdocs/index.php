@@ -14,6 +14,8 @@ $timed = Utils\Optimization::newTimer();
 
 $transit = new FrontController();
 
+// $transit->obClean = false; // do not ob_get_clean to $transit->obContent.
+
 // TEMPORARY ROUTER. FOR TESTING PURPOSES !
 $transit->addRouter(new Core\Router(array(
 	'index'    => new Core\Route('index',    PRESENTERS.'index',    VIEWS.'index'),
@@ -22,8 +24,8 @@ $transit->addRouter(new Core\Router(array(
 	'example1' => new Core\Route('example1', PRESENTERS.'example1', VIEWS.'example1'),
 	'example2' => new Core\Route('example2', PRESENTERS.'example2', VIEWS.'example2'),
 	'nothing'  => new Core\Route('nothing',  PRESENTERS.'none',     VIEWS.'none'),
-	'empty1'   => new Core\Route('',         PRESENTERS.'none',     VIEWS.''),
-	'empty2'   => new Core\Route('',         PRESENTERS.'',         VIEWS.'')
+	'empty1'   => new Core\Route('',         PRESENTERS.'none',     ''),
+	'empty2'   => new Core\Route('',         '',                    '')
 )));
 // TEMPORARY ROUTER. FOR TESTING PURPOSES !
 
@@ -69,3 +71,5 @@ $transit->layout = function($transit) {
 <?php };
 
 $transit->print();
+
+// echo $transit->getObContent();
