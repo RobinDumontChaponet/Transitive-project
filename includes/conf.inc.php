@@ -7,11 +7,11 @@ namespace Transitive;
  */
 define('ROOT_PATH', dirname(dirname(__FILE__)));
 define('SELF', (dirname($_SERVER['PHP_SELF']) == '/' ? '' : dirname($_SERVER['PHP_SELF'])));
-define('CONTROLLERS_INC', ROOT_PATH.'/controllers/');
-define('MODELS_INC', ROOT_PATH.'/models/');
-define('VIEWS_INC', ROOT_PATH.'/views/');
-define('DATA_PATH', ROOT_PATH.'/data/');
-define('WEB_DATA', SELF.'data/');
+define('PRESENTERS', ROOT_PATH.'/presenters/');
+define('MODELS', ROOT_PATH.'/models/');
+define('VIEWS', ROOT_PATH.'/views/');
+define('PRIVATE_DATA', ROOT_PATH.'/data/');
+define('PUBLIC_DATA', SELF.'data/');
 
 /*
 if(class_exists('Transitive\Core\FrontController')) {
