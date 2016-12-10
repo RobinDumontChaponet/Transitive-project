@@ -17,7 +17,7 @@ $transit = new FrontController();
 // $transit->obClean = false; // do not ob_get_clean to FrontController->obContent.
 
 // TEMPORARY ROUTER. FOR TESTING PURPOSES !
-$transit->addRouter(new Core\Router(array(
+$transit->addRouter(new Core\ListRouter(array(
 	'index'    => new Route('index',    PRESENTERS.'index.presenter.php',    VIEWS.'index.view.php'),
 	'redirect' => new Route('redirect', PRESENTERS.'index.presenter.php',    VIEWS.'index.view.php'),
 	'example0' => new Route('example0', PRESENTERS.'example0.presenter.php', VIEWS.'example0.view.php'),
@@ -54,7 +54,7 @@ $transit->layout = function ($transit) {
 <link rel="apple-touch-icon" href="style/favicon-152.png">
 <link rel="stylesheet" type="text/css" href="style/reset.min.css" />
 <?php $transit->printStyles() ?>
-<!--[if lt IE 9]><script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if lt IE 9]><script type="text/javascript" src="script/html5shiv.min.js"></script><![endif]-->
 <?php $transit->printScripts() ?>
 </head>
 <body>
