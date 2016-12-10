@@ -5,6 +5,7 @@ namespace Transitive;
 require_once __DIR__.'/../vendor/autoload.php';
 
 use Transitive\Core\FrontController as FrontController;
+use Transitive\Core\Route as Route;
 
 set_include_path(__DIR__.'/../includes');
 require 'conf.inc.php';
@@ -13,18 +14,20 @@ $timed = Utils\Optimization::newTimer();
 
 $transit = new FrontController();
 
-// $transit->obClean = false; // do not ob_get_clean to $transit->obContent.
+// $transit->obClean = false; // do not ob_get_clean to FrontController->obContent.
 
 // TEMPORARY ROUTER. FOR TESTING PURPOSES !
 $transit->addRouter(new Core\Router(array(
-	'index'    => new Core\Route('index',    PRESENTERS.'index',    VIEWS.'index'),
-	'redirect' => new Core\Route('redirect', PRESENTERS.'index',    VIEWS.'index'),
-	'example0' => new Core\Route('example0', PRESENTERS.'example0', VIEWS.'example0'),
-	'example1' => new Core\Route('example1', PRESENTERS.'example1', VIEWS.'example1'),
-	'example2' => new Core\Route('example2', PRESENTERS.'example2', VIEWS.'example2'),
-	'nothing'  => new Core\Route('nothing',  PRESENTERS.'none',     VIEWS.'none'),
-	'empty1'   => new Core\Route('',         PRESENTERS.'none',     ''),
-	'empty2'   => new Core\Route('',         '',                    ''),
+	'index'    => new Route('index',    PRESENTERS.'index.presenter.php',    VIEWS.'index.view.php'),
+	'redirect' => new Route('redirect', PRESENTERS.'index.presenter.php',    VIEWS.'index.view.php'),
+	'example0' => new Route('example0', PRESENTERS.'example0.presenter.php', VIEWS.'example0.view.php'),
+	'example1' => new Route('example1', PRESENTERS.'example1.presenter.php', VIEWS.'example1.view.php'),
+	'example2' => new Route('example2', PRESENTERS.'example2.presenter.php', VIEWS.'example2.view.php'),
+	'nothing'  => new Route('nothing',  PRESENTERS.'none.presenter.php',     VIEWS.'none.view.php'),
+	'empty1'   => new Route('',         PRESENTERS.'none.presenter.php',     ''),
+	'empty2'   => new Route('',         '',                    ''),
+	'empty3'   => new Route('',         ''),
+	'same'     => new Route('same',     PRESENTERS.'index.presenter.php')
 )));
 // TEMPORARY ROUTER. FOR TESTING PURPOSES !
 
@@ -71,4 +74,4 @@ $transit->layout = function ($transit) {
 
 $transit->print();
 
-// echo $transit->getObContent();
+// echo $transit->getObContent(); // presenter & view output buffer.
