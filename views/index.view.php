@@ -21,4 +21,4 @@ $view->content = function ($data) { ?>
 <br />
 
 <?php
-} ?>
+};

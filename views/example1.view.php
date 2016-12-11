@@ -7,7 +7,9 @@ $view->addMetaTag('author', 'r-dc');
 $view->addStyle('body {background:lightgrey}');
 $view->linkStylesheet('style/animations.css');
 
-$view->content = array('Content can be in an array.', function (&$data) { ?>
+$view->content = array(
+    'Content can be in an array.',
+    function (&$data) { ?>
 
 <p>
 Array items can then be displayed independently by their key using <code>View->displayContent($arrayKey)</code>
@@ -18,5 +20,3 @@ Array items can then be displayed independently by their key using <code>View->d
 echo $data['test'];
 
 });
-
-?>

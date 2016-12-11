@@ -15,4 +15,4 @@ $view->content = function ($data) { ?>
 </div>
 
 <?php
-} ?>
+};
