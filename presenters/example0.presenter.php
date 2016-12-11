@@ -1,7 +1,7 @@
 <?php
 
-// By default the view have the same name than its presenters. You can change it with :
-// $presenter->setViewPath('aDifferentViewThanDefault');
+// The presenter can change the view specified in the route:
+// $route->view = 'anotherView.view.php';
 
 //$data['test'] = 'testData';
 
