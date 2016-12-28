@@ -17,22 +17,26 @@ $transit = new FrontController();
 // $transit->obClean = false; // do not ob_get_clean to FrontController->obContent.
 
 // TEMPORARY ROUTER. FOR TESTING PURPOSES !
+/*
 $transit->addRouter(new Core\ListRegexRouter(array(
-    'value-(?\'value\'\w*?)' => new Route(PRESENTERS.'value.presenter.php', VIEWS.'value.view.php'),
-    'redirect' => new Route(PRESENTERS.'index.presenter.php', VIEWS.'index.view.php'),
-    'example0' => new Route(PRESENTERS.'example0.presenter.php', VIEWS.'example0.view.php'),
-    'example1' => new Route(PRESENTERS.'example1.presenter.php', VIEWS.'example1.view.php'),
-    'example2' => new Route(PRESENTERS.'example2.presenter.php', VIEWS.'example2.view.php'),
-    'nothing' => new Route(PRESENTERS.'none.presenter.php', VIEWS.'none.view.php'),
-    'empty1' => new Route(PRESENTERS.'none.presenter.php', ''),
-    'empty2' => new Route('', ''),
-    'empty3' => new Route(''),
-    'same' => new Route(PRESENTERS.'index.presenter.php'),
-    '\w*?' => new Route(PRESENTERS.'index.presenter.php', VIEWS.'index.view.php'),
+    'value-(?\'value\'\w*?)' => new Route(PRESENTERS.'value.presenter.php',    VIEWS.'value.view.php'),
+    'redirect'               => new Route(PRESENTERS.'index.presenter.php',    VIEWS.'index.view.php'),
+    'example0'               => new Route(PRESENTERS.'example0.presenter.php', VIEWS.'example0.view.php'),
+    'example1'               => new Route(PRESENTERS.'example1.presenter.php', VIEWS.'example1.view.php'),
+    'example2'               => new Route(PRESENTERS.'example2.presenter.php', VIEWS.'example2.view.php'),
+    'nothing'                => new Route(PRESENTERS.'none.presenter.php',     VIEWS.'none.view.php'),
+    'empty1'                 => new Route(PRESENTERS.'none.presenter.php',     ''),
+    'empty2'                 => new Route('',                                  ''),
+    'empty3'                 => new Route(''),
+    'same'                   => new Route(PRESENTERS.'index.presenter.php'),
+    '\w*?'                   => new Route(PRESENTERS.'index.presenter.php',    VIEWS.'index.view.php')
 )));
+*/
 // TEMPORARY ROUTER. FOR TESTING PURPOSES !
 
-$transit->execute(@$_GET['request']);
+$transit->addRouter(new Core\PathRouter(PRESENTERS, VIEWS));
+
+$transit->execute(@$_GET['request'] ?? 'index');
 
 $transit->layout = function ($transit) {
     global $timed; ?>
@@ -70,6 +74,7 @@ $transit->layout = function ($transit) {
 </html>
 
 <?php
+
 };
 
 $transit->print();
