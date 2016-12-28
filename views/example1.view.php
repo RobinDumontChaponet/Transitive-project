@@ -18,5 +18,4 @@ Array items can then be displayed independently by their key using <code>View->d
 <?php
 
 echo $data['test'];
-
-});
+}, );
