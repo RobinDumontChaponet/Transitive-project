@@ -58,6 +58,7 @@ class ScriptHandler
 
         template('composer.json', $replaces);
         template('README.md', $replaces);
+        template('htdocs/index.php', $replaces);
 
         remove('install');
 
