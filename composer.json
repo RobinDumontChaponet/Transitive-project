@@ -22,7 +22,7 @@
 		"post-create-project-cmd": [
 			"@setup",
 			"Transitive\\Project\\Install\\ScriptHandler::setup",
-			"composer install -o"
+			"composer install -o --quiet"
 		],
 		"post-install-cmd": "@setup"
 	}
