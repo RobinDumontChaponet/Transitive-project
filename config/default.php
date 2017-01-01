@@ -14,13 +14,6 @@ define('PRIVATE_DATA', ROOT_PATH.'/data/');
 define('PUBLIC_DATA', SELF.'data/');
 
 /*
-if(class_exists('Transitive\Core\FrontController')) {
-    Core\FrontController::$presenterIncludePath = ROOT_PATH.'/presenters/';
-    Core\FrontController::$viewIncludePath = ROOT_PATH.'/views/';
-}
-*/
-
-/*
  * Database
  */
 /*
@@ -38,5 +31,5 @@ setlocale(LC_ALL, 'fr_FR.utf8', 'fr', 'fr_FR', 'fr_FR@euro', 'fr-FR', 'fra');
  * Debugging
  */
 // Console.log
-define('JS_DEBUG', 'true'); // send (to server), true (display in client console) or false_
+// define('JS_DEBUG', 'true'); // send (to server), true (display in client console) or false_
 // @TODO

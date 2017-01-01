@@ -14,5 +14,16 @@
 		"php": "^7.0",
 		"transitive/core":"dev-master",
 		"transitive/utils":"dev-master"
-	}
+	},
+	"autoload": {
+		"classmap": ["install/ScriptHandler.class.php"]
+	},
+	"scripts": {
+		"setup": "Transitive\\Core\\Install\\ScriptHandler::setup",
+        "post-create-project-cmd": [
+        	"@setup",
+			"Transitive\\Project\\Install\\ScriptHandler::setup"
+		],
+        "post-install-cmd": "@setup"
+    }
 }

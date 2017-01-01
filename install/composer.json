@@ -1,0 +1,11 @@
+{
+	"name": "{{projectName}}",
+	"description": "",
+	"type": "project",
+	"authors": [],
+	"require": {
+		"php": "^7.0",
+		"transitive/core":"dev-master",
+		"transitive/utils":"dev-master"
+	}
+}
