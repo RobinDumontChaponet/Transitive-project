@@ -3,13 +3,12 @@
 	"description": "An empty project using Transitive.",
 	"type": "project",
 	"authors": [
-		{
-			"name": "Robin Dumont-Chaponet",
-			"email": "src@dumontchapo.net",
-			"homepage": "https://robin.dumontchapo.net",
-			"role": "Developer"
-		}
-	],
+	{
+		"name": "Robin Dumont-Chaponet",
+		"email": "src@dumontchapo.net",
+		"homepage": "https://robin.dumontchapo.net",
+		"role": "Developer"
+	}],
 	"require": {
 		"php": "^7.0",
 		"transitive/core":"dev-master",
@@ -20,10 +19,10 @@
 	},
 	"scripts": {
 		"setup": "Transitive\\Core\\Install\\ScriptHandler::setup",
-        "post-create-project-cmd": [
-        	"@setup",
+		"post-create-project-cmd": [
+			"@setup",
 			"Transitive\\Project\\Install\\ScriptHandler::setup"
 		],
-        "post-install-cmd": "@setup"
-    }
+		"post-install-cmd": "@setup"
+	}
 }
