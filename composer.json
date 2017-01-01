@@ -1,6 +1,6 @@
 {
-	"name": "transitive/mvp",
-	"description": "Description is coming",
+	"name": "transitive/project",
+	"description": "An empty project using Transitive.",
 	"type": "project",
 	"authors": [
 		{
