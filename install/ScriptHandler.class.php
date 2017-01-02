@@ -13,7 +13,7 @@ function template(string $file, array $replaces) {
             $replaces
         )
     );
-	echo ' mixing words in: ', $file, PHP_EOL;
+    echo ' mixing words in: ', $file, PHP_EOL;
 }
 
 function deleteDirectory(string $path) {
