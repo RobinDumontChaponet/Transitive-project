@@ -8,6 +8,7 @@ AddType application/x-font-ttf .ttf
 AddType application/x-font-opentype .otf
 AddType application/x-font-woff .woff
 AddType image/svg+xml .svg
+AddType image/x-icon .ico
 AddType application/octet-stream .zip
 
 <IfModule mod_headers.c>
