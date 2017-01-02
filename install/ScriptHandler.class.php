@@ -53,7 +53,7 @@ class ScriptHandler
             'composer.json',
             'README.md',
             'CHANGELOG.md',
-            ['htaccess', '.htaccess']
+            ['htaccess', 'htdocs/.htaccess']
         ], 'install');
 
         $replaces = ['{{projectName}}' => $projectName];
