@@ -11,8 +11,8 @@
 	}],
 	"require": {
 		"php": "^7.0",
-		"transitive/core":"dev-master",
-		"transitive/utils":"dev-master"
+		"transitive/core":"^1.0.0",
+		"transitive/utils":"^0.9.5@dev"
 	},
 	"autoload": {
 		"classmap": ["install/ScriptHandler.class.php"]
