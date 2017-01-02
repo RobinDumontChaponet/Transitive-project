@@ -13,7 +13,7 @@ function template(string $file, array $replaces) {
             $replaces
         )
     );
-    echo ' mixing words in: ', $file, PHP_EOL;
+    echo ' * mixing words in: ', $file, PHP_EOL;
 }
 
 function deleteDirectory(string $path) {
@@ -33,10 +33,10 @@ function deleteDirectory(string $path) {
 function remove(string $path) {
     if(is_file($path)) {
         if(unlink($path))
-            echo ' deleting: ', $path, PHP_EOL;
+            echo ' - deleting: ', $path, PHP_EOL;
     } elseif(is_dir($path))
         if(deleteDirectory($path))
-            echo ' deleting: ', $path, '/', PHP_EOL;
+            echo ' - deleting: ', $path, '/', PHP_EOL;
 }
 
 class ScriptHandler
@@ -64,6 +64,6 @@ class ScriptHandler
 
         remove('install');
 
-        echo PHP_EOL, PHP_EOL, 'Welcome to Summoner\' rif… erm, no ! Welcome to your new Transitive project "', $projectName, '". Now… get to work !', PHP_EOL, PHP_EOL;
+        echo PHP_EOL, PHP_EOL, 'Welcome to Summoner\' rif… erm, no ! Welcome to your new Transitive project "', $projectName, '". And now… get to work !', PHP_EOL, PHP_EOL;
     }
 }
