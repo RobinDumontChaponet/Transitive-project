@@ -54,7 +54,7 @@ class ScriptHandler
             'README.md',
             'CHANGELOG.md',
             ['htaccess', 'htdocs/.htaccess'],
-        ], 'install');
+        ], dirname(__FILE__));
 
         $replaces = ['{{projectName}}' => $projectName];
 
