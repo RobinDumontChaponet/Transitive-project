@@ -21,7 +21,7 @@
 		"setup": "Transitive\\Core\\Install\\ScriptHandler::setup",
 		"post-create-project-cmd": [
 			"@setup",
-			"Transitive\\Project\\Install\\ScriptHandler::setup",
+			"Transitive\\Project\\Install\\ScriptHandler::setup"
 		],
 		"post-install-cmd": "@setup"
 	}
