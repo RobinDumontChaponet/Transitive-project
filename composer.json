@@ -15,7 +15,10 @@
 		"transitive/utils":"^0.9.6"
 	},
 	"autoload": {
-		"classmap": ["install/ScriptHandler.class.php"]
+		"classmap": ["install/ScriptHandler.class.php"],
+		"psr-4": {
+			"": "models/"
+		}
 	},
 	"scripts": {
 		"setup": "Transitive\\Core\\Install\\ScriptHandler::setup",
