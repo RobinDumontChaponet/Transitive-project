@@ -22,32 +22,22 @@ $request = @$_GET['request'];
 $front->execute($request ?? 'index');
 
 // Set page layout that wrap around our views
-$transit->setLayoutContent(function ($data) use ($request) {
+$front->setLayoutContent(function ($data) use ($request) {
     $request = $request ?? '';
 ?>
 <!DOCTYPE html>
-<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
-<!--[if IE 7]>   <html class="lt-ie9 lt-ie8" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
-<!--[if IE 8]>   <html class="lt-ie9" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
-<!--[if gt IE 8]><html class="get-ie9" xmlns="http://www.w3.org/1999/xhtml"><![endif]-->
+<html>
 <head>
 <meta charset="UTF-8">
 <?= $data['view']->getMetas(); ?>
 <?= $data['view']->getTitle('{{projectName}}'); ?>
 <base href="<?= ($self = null == dirname($_SERVER['PHP_SELF'])) ? '/' : $self.'/'; ?>" />
-<!--[if IE]><link rel="shortcut icon" href="style/favicon-32.ico"><![endif]-->
-<!--
-<link rel="icon" href="style/favicon-96.png">
-<meta name="msapplication-TileColor" content="#FFF">
-<meta name="msapplication-TileImage" content="style/favicon-144.png">
-<link rel="apple-touch-icon" href="style/favicon-152.png">
--->
 <?= $data['view']->getStyles(); ?>
 <?= $data['view']->getScripts(); ?>
 </head>
-<body lang="fr" class="no-js">
+<body lang="fr">
 	<header>
-		<h1><a href="<?= dirname($_SERVER['PHP_SELF']); ?>" accesskey="1">{{projectName}}</h1>
+		<h1><a href="<?= dirname($_SERVER['PHP_SELF']); ?>" accesskey="1">caca3</a></h1>
 	</header>
 	<div id="wrapper">
 	<?php
@@ -60,12 +50,8 @@ $transit->setLayoutContent(function ($data) use ($request) {
 	<footer>
 		<p>Let's code…</p>
 	</footer>
-	<script>
-	document.body.classList.remove('no-js');
-	</script>
 </body>
 </html>
-
 <?php
 });
 
