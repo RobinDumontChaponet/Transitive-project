@@ -4,8 +4,12 @@
 	"type": "project",
 	"authors": [],
 	"require": {
-		"php": "^7.0",
-		"transitive/core":"^1.0 <2.0",
-		"transitive/utils":"^0.9.6"
+		"php": "^7.1",
+		"transitive/core":"^2.0 <3.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"": "models/"
+		}
 	}
 }

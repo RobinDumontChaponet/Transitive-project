@@ -10,22 +10,29 @@
 		"role": "Developer"
 	}],
 	"require": {
-		"php": "^7.0",
-		"transitive/core":"^1.0 <2.0",
-		"transitive/utils":"^0.9.6"
+		"php": "^7.1",
+		"transitive/core":"^2.0 <3.0"
 	},
+	"require-dev": {
+		"friendsofphp/php-cs-fixer": "^2.10"
+    },
 	"autoload": {
-		"classmap": ["install/ScriptHandler.class.php"],
-		"psr-4": {
-			"": "models/"
-		}
+		"classmap": ["install/ScriptHandler.class.php"]
 	},
 	"scripts": {
-		"setup": "Transitive\\Core\\Install\\ScriptHandler::setup",
+		"created": "Transitive\\Project\\Install\\ScriptHandler::create",
+		"installed": "Transitive\\Project\\Install\\ScriptHandler::install",
+		"setup": "Transitive\\Project\\Install\\ScriptHandler::setup",
 		"post-create-project-cmd": [
+			"@created",
 			"@setup",
-			"Transitive\\Project\\Install\\ScriptHandler::setup"
+			"@composer update --lock"
 		],
-		"post-install-cmd": "@setup"
+		"post-install-cmd": [
+			"@installed",
+			"@composer update --lock"
+		],
+		"check": "./vendor/bin/php-cs-fixer fix --dry-run",
+        "fix": "./vendor/bin/php-cs-fixer fix"
 	}
 }
