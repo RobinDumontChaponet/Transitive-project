@@ -37,7 +37,7 @@ $front->setLayoutContent(function ($data) use ($request) {
 </head>
 <body lang="fr">
 	<header>
-		<h1><a href="<?= dirname($_SERVER['PHP_SELF']); ?>" accesskey="1">caca3</a></h1>
+		<h1><a href="<?= dirname($_SERVER['PHP_SELF']); ?>" accesskey="1">{{projectName}}</a></h1>
 	</header>
 	<div id="wrapper">
 	<?php
