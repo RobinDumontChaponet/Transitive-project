@@ -6,10 +6,10 @@ require __DIR__.'/../vendor/autoload.php';
 
 $front = new Transitive\Core\WebFront();
 
-// $transit->obClean = false;
+// $front->obClean = false;
 
 /*
-$transit->addRouter(new Core\ListRegexRouter([
+$front->addRouter(new Core\ListRegexRouter([
     'articles/(?\'id\'\d*)'              => new Route(PRESENTERS.'article.php',         VIEWS.'article.php'),
     'tags/(?\'nId\'[^\/]*)/articles$'    => new Route(PRESENTERS.'tag-articles.php',    VIEWS.'tag-articles.php'),
     'tags/(?\'nId\'[^\/]*)/description$' => new Route(PRESENTERS.'tag-description.php', VIEWS.'tag-description.php'),
@@ -57,4 +57,4 @@ $front->setLayoutContent(function ($data) use ($request) {
 
 echo $front;
 
-//echo $transit->getObContent();
+//echo $front->getObContent();
