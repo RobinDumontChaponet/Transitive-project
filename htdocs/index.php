@@ -1,22 +1,19 @@
 <?php
 
+use Transitive\Front;
+use Transitive\Core\Route;
+
 require __DIR__.'/../vendor/autoload.php';
 
-// Transitive\Utils\Sessions::start();
-
-$front = new Transitive\Core\WebFront();
-
-// $front->obClean = false;
+$front = new Front\WebFront();
+//$front->obClean = false; // do not ob_get_clean to FrontController->obContent.
 
 /*
-$front->addRouter(new Core\ListRegexRouter([
-    'articles/(?\'id\'\d*)'              => new Route(PRESENTERS.'article.php',         VIEWS.'article.php'),
-    'tags/(?\'nId\'[^\/]*)/articles$'    => new Route(PRESENTERS.'tag-articles.php',    VIEWS.'tag-articles.php'),
-    'tags/(?\'nId\'[^\/]*)/description$' => new Route(PRESENTERS.'tag-description.php', VIEWS.'tag-description.php'),
-    'tags/(?\'id\'\d*)'                  => new Route(PRESENTERS.'tag.php',             VIEWS.'tag.php'),
+$front->addRouter(new Front\ListRegexRouter([
+	'sitemap' => new Route(PRESENTERS.'sitemap.php', VIEWS.'sitemap.php', null, ['binder' => $front])
 ]));
 */
-$front->addRouter(new Transitive\Core\PathRouter(dirname(dirname(__FILE__)).'/presenters', dirname(dirname(__FILE__)).'/views'));
+$front->addRouter(new Front\PathRouter(dirname(dirname(__FILE__)).'/presenters', dirname(dirname(__FILE__)).'/views'));
 
 $request = @$_GET['request'];
 $front->execute($request ?? 'index');
