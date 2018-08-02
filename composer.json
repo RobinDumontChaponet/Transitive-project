@@ -11,7 +11,7 @@
 	}],
 	"require": {
 		"php": "^7.1",
-		"transitive/front":"^2.1 <3.0"
+		"transitive/web":"^2.2 <3.0"
 	},
 	"autoload": {
 		"classmap": ["install/ScriptHandler.class.php"]

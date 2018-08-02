@@ -1,6 +1,6 @@
 # Transitive-project
 
-An empty project using Transitive\Core.
+An empty project using Transitive.
 
 This is not the only way to use Transitive. Modify to your need.
 
