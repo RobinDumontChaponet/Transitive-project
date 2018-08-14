@@ -1,26 +1,23 @@
 <?php
 
-use Transitive\Front;
-use Transitive\Core\Route;
+use Transitive\Web;
+use Transitive\Routing;
+use Transitive\Utils;
 
-require __DIR__.'/../vendor/autoload.php';
+if((@require __DIR__.'/../vendor/autoload.php') === false) {
+	echo 'Dependencies are not installed, please run "composer install" first';
+	exit(1);
+}
 
-$front = new Front\WebFront();
-//$front->obClean = false; // do not ob_get_clean to FrontController->obContent.
+$timed = Utils\Optimization::newTimer();
 
-/*
-$front->addRouter(new Front\ListRegexRouter([
-	'sitemap' => new Route(PRESENTERS.'sitemap.php', VIEWS.'sitemap.php', null, ['binder' => $front])
-]));
-*/
-$front->addRouter(new Front\PathRouter(dirname(dirname(__FILE__)).'/presenters', dirname(dirname(__FILE__)).'/views'));
+$front = new Web\Front();
 
-$request = @$_GET['request'];
-$front->execute($request ?? 'index');
+$front->addRouter(new Routing\PathRouter(dirname(dirname(__FILE__)).'/presenters', dirname(dirname(__FILE__)).'/views'));
 
-// Set page layout that wrap around our views
-$front->setLayoutContent(function ($data) use ($request) {
-    $request = $request ?? '';
+$front->obClean = false; // do not ob_get_clean to FrontController->obContent.
+
+$front->setLayoutContent(function ($data) {
 ?>
 <!DOCTYPE html>
 <html>
