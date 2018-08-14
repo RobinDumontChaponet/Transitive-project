@@ -4,8 +4,8 @@ use Transitive\Web;
 use Transitive\Routing;
 use Transitive\Utils;
 
-if((@require __DIR__.'/../vendor/autoload.php') === false) {
-	echo 'Dependencies are not installed, please run "composer install" first';
+if((include __DIR__.'/../vendor/autoload.php') === false) {
+	echo 'Dependencies are not installed, please run `composer install` or `composer update`.';
 	exit(1);
 }
 
