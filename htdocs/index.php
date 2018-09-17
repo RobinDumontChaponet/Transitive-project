@@ -17,7 +17,9 @@ $front->addRouter(new Routing\PathRouter(dirname(dirname(__FILE__)).'/presenters
 
 $front->obClean = false; // do not ob_get_clean to FrontController->obContent.
 
-$front->setLayoutContent(function ($data) {
+$front->execute(@$_GET['request'] ?? 'index');
+
+$front->setLayoutContent(function ($data) use ($timed) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,6 +45,10 @@ $front->setLayoutContent(function ($data) {
 	</div>
 	<footer>
 		<p>Let's code…</p>
+		<?php
+		$timed->printResult();
+		Utils\Optimization::listIncludes();
+		?>
 	</footer>
 </body>
 </html>
