@@ -5,8 +5,7 @@
 	"authors": [],
 	"require": {
 		"php": "^7.1",
-		"transitive/web":"^2.4 <3.0",
-		"transitive/utils":"^0.9.9"
+		"transitive/web":"^2.4 <3.0"
 	},
 	"autoload": {
 		"psr-4": {

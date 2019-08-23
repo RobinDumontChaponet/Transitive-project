@@ -2,14 +2,11 @@
 
 use Transitive\Web;
 use Transitive\Routing;
-use Transitive\Utils;
 
 if((include __DIR__.'/../vendor/autoload.php') === false) {
 	echo 'Dependencies are not installed, please run `composer install` or `composer update`.';
 	exit(1);
 }
-
-$timed = Utils\Optimization::newTimer();
 
 $front = new Web\Front();
 
@@ -19,7 +16,7 @@ $front->obClean = false; // do not ob_get_clean to FrontController->obContent.
 
 $front->execute(@$_GET['request'] ?? 'index');
 
-$front->setLayoutContent(function ($data) use ($timed) {
+$front->setLayoutContent(function ($data) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,10 +42,6 @@ $front->setLayoutContent(function ($data) use ($timed) {
 	</div>
 	<footer>
 		<p>Let's code…</p>
-		<?php
-		$timed->printResult();
-		Utils\Optimization::listIncludes();
-		?>
 	</footer>
 </body>
 </html>
