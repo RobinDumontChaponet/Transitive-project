@@ -10,7 +10,6 @@
 		"role": "Developer"
 	}],
 	"require": {
-		"php": "^7.1",
 		"transitive/web":"^2.4 <3.0"
 	},
 	"autoload": {
